@@ -5,28 +5,33 @@ import Tab from "./Tab";
 import TopBarItem from "./TopBarItem";
 import BottomBar from "./BottomBar";
 
-const Container = styled.div`
-  height: 500px;
-  width: 500px;
-  border: 1px solid black;
-  border-radius: 5px;
-  position: relative;
-`;
-
-const TopBar = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid black;
-  background: #283d3b;
-`;
-
-const PanelBody = styled.div`
-  padding: 10px;
-`;
-
-const TabPanel = ({ data }) => {
+const TabPanel = ({ data, vertical }) => {
   const [activeTab, setActiveTab] = useState(0);
+
+  const Container = styled.div`
+    width: 500px;
+    min-height: 500px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: relative;
+    display: ${vertical ? "block" : "flex"};
+    transition: all 0.25s ease;
+  `;
+
+  const PanelBody = styled.div`
+    padding: 10px;
+    width: 100%;
+  `;
+
+  const TopBar = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: ${vertical ? "center" : "flex-start"};
+    flex-direction: ${vertical ? "row" : "column"};
+    border-bottom: 1px solid black;
+    background: #283d3b;
+    padding: ${vertical ? 0 : "10px 0"};
+  `;
 
   const createTopBar = () => {
     const topBar = data.map((item, index) => {

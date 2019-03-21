@@ -8,6 +8,8 @@ const TopBarItem = ({ active, title, id, setActiveTab }) => {
     padding: 10px;
     cursor: pointer;
     transition: all 0.25s ease;
+    width: 100px;
+    text-align: center;
   `;
 
   return (

@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const BBar = styled.div`
-  background: #283d3b;
+  background: #283d3a;
   display: flex;
   justify-content: center;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
+  border-top: 1px solid white;
 `;
 
 const Filler = styled.div`

@@ -1,6 +1,6 @@
 import React from "react";
-
 import styled, { createGlobalStyle } from "styled-components";
+
 import TabPanel from "./components/TabPanel/TabPanel";
 import MyFormComponent from "./components/MyForm";
 import FakeServer from "./components/FakeServer";
@@ -11,27 +11,30 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Lato', sans-serif;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    outline: none;
     & > div {
       height: 100vh;
       width: 100vw;
     }
   }
+  * {
+    box-sizing: border-box;
+    outline: none;
+  }
 `;
 
 const StyledApp = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   height: 100%;
   width: 100%;
+  margin-top: 20px;
 `;
 
 const App = () => {
   return (
     <StyledApp>
-      <TabPanel data={data} />
+      <TabPanel data={data} vertical={false} />
       <GlobalStyle />
     </StyledApp>
   );
