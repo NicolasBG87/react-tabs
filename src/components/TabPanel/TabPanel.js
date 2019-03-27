@@ -9,10 +9,8 @@ const TabPanel = ({ data, vertical }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const Container = styled.div`
-    width: 500px;
-    min-height: 500px;
-    border: 1px solid black;
-    border-radius: 5px;
+    width: 100%;
+    height: 100%;
     position: relative;
     display: ${vertical ? "block" : "flex"};
     transition: all 0.25s ease;

@@ -5,8 +5,8 @@ const MyForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid black;
   padding: 20px;
+  width: 100%;
   & label {
     color: #197278;
     font-weight: bold;

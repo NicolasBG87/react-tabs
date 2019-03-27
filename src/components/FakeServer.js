@@ -9,6 +9,7 @@ const Container = styled.div`
 `;
 
 const MyTable = styled.table`
+  width: 100%;
   & tr:nth-child(even) {
     background: rgba(0, 0, 0, 0.15);
   }
@@ -24,9 +25,7 @@ const FakeServer = () => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then(response => response.json())
       .then(json => {
-        setTimeout(() => {
-          setData(json);
-        }, 2500);
+        setData(json);
       });
   }, []);
 

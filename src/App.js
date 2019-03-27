@@ -9,8 +9,6 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
     font-family: 'Lato', sans-serif;
-    padding: 0;
-    margin: 0;
     & > div {
       height: 100vh;
       width: 100vw;
@@ -19,6 +17,8 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     outline: none;
+    padding: 0;
+    margin: 0;
   }
 `;
 
@@ -28,7 +28,6 @@ const StyledApp = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
-  margin-top: 20px;
 `;
 
 const App = () => {
