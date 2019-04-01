@@ -45,13 +45,6 @@ const FakeServer = () => {
     <Container>
       {data ? (
         <MyTable>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Email</th>
-            </tr>
-          </thead>
           <tbody>{renderList()}</tbody>
         </MyTable>
       ) : (

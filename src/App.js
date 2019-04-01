@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
 import TabPanel from "./components/TabPanel/TabPanel";
@@ -12,6 +12,9 @@ const GlobalStyle = createGlobalStyle`
     & > div {
       height: 100vh;
       width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
   * {
@@ -23,17 +26,24 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const StyledApp = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
   height: 100%;
   width: 100%;
+  padding: 50px;
 `;
 
 const App = () => {
+  const [vertical, setVertical] = useState(false);
+
   return (
     <StyledApp>
-      <TabPanel data={data} vertical={false} />
+      <input
+        type="checkbox"
+        value={vertical}
+        onChange={e => setVertical(e.target.checked)}
+        name="tabConfig"
+      />
+      <label htmlFor="tabConfig">Vertical Layout</label>
+      <TabPanel data={data} vertical={vertical} />
       <GlobalStyle />
     </StyledApp>
   );
@@ -66,12 +76,12 @@ const data = [
         <img
           src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
           alt="Cat"
-          width={50 + "%"}
+          width="200px"
         />
         <img
           src="https://media.mnn.com/assets/images/2018/07/cat_one_eye_open.jpg.838x0_q80.jpg"
           alt="Cat"
-          width={50 + "%"}
+          width="200px"
         />
         <hr />
         <input type="text" placeholder="Text Input" />

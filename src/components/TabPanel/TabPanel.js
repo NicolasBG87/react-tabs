@@ -9,11 +9,12 @@ const TabPanel = ({ data, vertical }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const Container = styled.div`
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     position: relative;
     display: ${vertical ? "block" : "flex"};
     transition: all 0.25s ease;
+    border: 1px solid #197278;
   `;
 
   const PanelBody = styled.div`

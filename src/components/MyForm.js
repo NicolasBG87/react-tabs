@@ -7,6 +7,8 @@ const MyForm = styled.form`
   justify-content: center;
   padding: 20px;
   width: 100%;
+  max-width: 500px;
+
   & label {
     color: #197278;
     font-weight: bold;
