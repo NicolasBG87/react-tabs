@@ -25,7 +25,7 @@ const FakeServer = () => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then(response => response.json())
       .then(json => {
-        setData(json);
+        setTimeout(() => setData(json), 1500);
       });
   }, []);
 
